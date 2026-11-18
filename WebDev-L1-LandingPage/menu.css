@@ -1,0 +1,413 @@
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: #F8F3EA;
+    color: #38291F;
+}
+
+
+/* Navigation Bar */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(248, 243, 234, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #E8DED2;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 6%;
+    gap: 20px;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #38291F;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar ul a {
+    color: #38291F;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar ul a:hover {
+    color: #A85E32;
+}
+
+
+/* Menu Hero */
+.menu-hero {
+    min-height: 330px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 50px 20px;
+
+    background-image:
+        linear-gradient(
+            rgba(30, 20, 13, 0.72),
+            rgba(30, 20, 13, 0.72)
+        ),
+        url("photos/cafe photo.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.menu-hero .eyebrow {
+    color: #E8A36C;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.menu-hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.menu-hero p {
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.menu-hero-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 24px;
+
+    background-color: #A85E32;
+    color: white;
+
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.menu-hero-btn:hover {
+    background-color: #784326;
+}
+
+
+/* Category Navigation */
+.menu-navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 25px 15px;
+    background-color: white;
+}
+
+.menu-navigation a {
+    padding: 10px 18px;
+    border: 1px solid #DCCBB9;
+    border-radius: 25px;
+
+    text-decoration: none;
+    color: #38291F;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: all 0.3s ease;
+}
+
+.menu-navigation a:hover {
+    background-color: #A85E32;
+    color: white;
+    border-color: #A85E32;
+}
+
+
+/* Menu Section */
+.menu-section {
+    padding: 80px 8%;
+}
+
+.menu-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.menu-heading .subtitle {
+    color: #A85E32;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.menu-heading h2 {
+    color: #38291F;
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.menu-heading p {
+    color: #75675D;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.menu-heading small {
+    color: #8B7B6F;
+    font-size: 12px;
+}
+
+
+/* Menu Cards Layout */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+/* Main Dishes occupy full width */
+.main-card {
+    grid-column: 1 / -1;
+}
+
+/* Menu Card */
+.menu-card {
+    padding: 28px;
+
+    background-color: white;
+    border: 1px solid #E8DED2;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(56, 41, 31, 0.05);
+}
+
+
+/* Category Heading */
+.category-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid #E8DED2;
+}
+
+.category-icon {
+    font-size: 30px;
+}
+
+.category-heading h2 {
+    color: #38291F;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.category-heading p {
+    color: #8B7B6F;
+    font-size: 12px;
+}
+
+.menu-items {
+    list-style: none;
+}
+
+.main-card .menu-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 25px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #F0E8DF;
+    font-size: 14px;
+}
+
+.menu-item > span {
+    color: #49382D;
+    font-weight: 600;
+}
+
+.menu-item strong {
+    color: #A85E32;
+    white-space: nowrap;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.prices small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+
+    color: #8B7B6F;
+    font-size: 10px;
+}
+
+.prices b {
+    color: #A85E32;
+    font-size: 13px;
+}
+
+.menu-footer {
+    text-align: center;
+    padding: 40px 20px;
+
+    background-color: #38291F;
+    color: #F8F3EA;
+}
+
+.menu-footer h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.menu-footer > p {
+    color: #D5C8BB;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.menu-footer a {
+    display: inline-block;
+    color: #E8A36C;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.menu-footer .copyright {
+    border-top: 1px solid #66564A;
+    padding-top: 20px;
+    margin: 0;
+    font-size: 12px;
+}
+
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .menu-section {
+        padding: 60px 5%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-card {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 12px 18px;
+    }
+
+    .navbar .logo {
+        font-size: 17px;
+    }
+
+    .navbar ul {
+        width: 100%;
+        gap: 13px;
+    }
+
+    .navbar ul a {
+        font-size: 12px;
+    }
+
+    .menu-hero h1 {
+        font-size: 36px;
+    }
+
+    .menu-heading h2 {
+        font-size: 28px;
+    }
+
+    .menu-card {
+        padding: 18px;
+    }
+
+    .main-card .menu-items {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-item {
+        font-size: 13px;
+    }
+
+    .prices {
+        gap: 7px;
+    }
+}
